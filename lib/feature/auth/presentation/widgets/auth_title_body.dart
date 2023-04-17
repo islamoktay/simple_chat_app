@@ -7,11 +7,11 @@ import 'package:simple_chat_app/core/theme/custom_text_styles.dart';
 class AuthTitleBody extends StatelessWidget {
   const AuthTitleBody({
     required this.title,
-    this.isRegister = false,
+    this.isBackButton = false,
     super.key,
   });
   final String title;
-  final bool isRegister;
+  final bool isBackButton;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -42,7 +42,7 @@ class AuthTitleBody extends StatelessWidget {
             style: CustomTextStyles.authTitleStyle,
           ),
         ),
-        if (isRegister)
+        if (isBackButton)
           Positioned(
             top: 16.h + MediaQuery.of(context).padding.top,
             left: 16.w,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_chat_app/core/dependency_injection/di.dart';
 import 'package:simple_chat_app/core/router/route_management.gr.dart';
+import 'package:simple_chat_app/core/utils/snack_bar/global_variable.dart';
 
 class SimpleChatApp extends StatelessWidget {
   const SimpleChatApp({super.key});
@@ -20,6 +21,7 @@ class SimpleChatApp extends StatelessWidget {
             ],
           ),
           routeInformationParser: sl<AppRouter>().defaultRouteParser(),
+          scaffoldMessengerKey: GlobalVariable.scaffoldMessengerKey,
         );
       },
     );

@@ -1,7 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:simple_chat_app/core/router/router_path.dart';
 import 'package:simple_chat_app/feature/auth/presentation/view/login_view.dart';
+import 'package:simple_chat_app/feature/auth/presentation/view/phone_auth_view.dart';
 import 'package:simple_chat_app/feature/auth/presentation/view/register_view.dart';
+import 'package:simple_chat_app/feature/discover/presentation/view/discover_view.dart';
+import 'package:simple_chat_app/feature/home/presentation/view/home_view.dart';
+import 'package:simple_chat_app/feature/messages/presentation/view/messages_view.dart';
 import 'package:simple_chat_app/feature/splash/presentation/view/splash_view.dart';
 
 @MaterialAutoRouter(
@@ -18,6 +22,25 @@ import 'package:simple_chat_app/feature/splash/presentation/view/splash_view.dar
     AutoRoute(
       path: RouterPath.loginView,
       page: LoginView,
+    ),
+    AutoRoute(
+      path: RouterPath.phoneAuthView,
+      page: PhoneAuthView,
+    ),
+    AutoRoute(
+      path: RouterPath.homeView,
+      page: HomeView,
+      children: [
+        AutoRoute(
+          path: RouterPath.discoverView,
+          page: DiscoverView,
+        ),
+        AutoRoute(
+          path: RouterPath.messagesView,
+          page: MessagesView,
+          initial: true,
+        ),
+      ],
     ),
   ],
 )

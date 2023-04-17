@@ -1,5 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:simple_chat_app/core/router/route_management.gr.dart';
+import 'package:simple_chat_app/feature/auth/data/repo_impl/auth_repo_impl.dart';
+import 'package:simple_chat_app/feature/auth/domain/repo/auth_repo.dart';
 import 'package:simple_chat_app/feature/auth/presentation/bloc/auth_bloc.dart';
 import 'package:simple_chat_app/feature/splash/presentation/cubit/splash_cubit.dart';
 
@@ -12,9 +14,10 @@ Future<void> init() async {
     ..registerLazySingleton<AppRouter>(AppRouter.new)
 
     //* Repos
+    ..registerLazySingleton<AuthRepo>(AuthRepoImpl.new)
 
     //* BLoCs
-    ..registerLazySingleton<AuthBloc>(AuthBloc.new)
+    ..registerLazySingleton<AuthBloc>(()=> AuthBloc(sl()))
 
     //* Cubits
     ..registerLazySingleton<SplashCubit>(SplashCubit.new);

@@ -12,12 +12,25 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/apple_icon.png
+  AssetGenImage get appleIcon =>
+      const AssetGenImage('assets/icons/apple_icon.png');
+
+  /// File path: assets/icons/facebook_icon.png
+  AssetGenImage get facebookIcon =>
+      const AssetGenImage('assets/icons/facebook_icon.png');
+
+  /// File path: assets/icons/google_icon.png
+  AssetGenImage get googleIcon =>
+      const AssetGenImage('assets/icons/google_icon.png');
+
   /// File path: assets/icons/launcher_icon.png
   AssetGenImage get launcherIcon =>
       const AssetGenImage('assets/icons/launcher_icon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [launcherIcon];
+  List<AssetGenImage> get values =>
+      [appleIcon, facebookIcon, googleIcon, launcherIcon];
 }
 
 class Assets {

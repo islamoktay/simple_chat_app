@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_chat_app/core/constants/app_content_texts.dart';
+import 'package:simple_chat_app/core/constants/login_method_constants.dart';
 import 'package:simple_chat_app/core/constants/padding_constants.dart';
 import 'package:simple_chat_app/core/dependency_injection/di.dart';
 import 'package:simple_chat_app/core/router/router_path.dart';
@@ -12,6 +13,7 @@ import 'package:simple_chat_app/core/widgets/custom_scaffold.dart';
 import 'package:simple_chat_app/core/widgets/custom_text_form_field.dart';
 import 'package:simple_chat_app/feature/auth/presentation/bloc/auth_bloc.dart';
 import 'package:simple_chat_app/feature/auth/presentation/widgets/auth_title_body.dart';
+import 'package:simple_chat_app/feature/auth/presentation/widgets/login_method_button.dart';
 import 'package:simple_chat_app/feature/auth/presentation/widgets/or_login_with_body.dart';
 
 class LoginView extends HookWidget {
@@ -57,11 +59,32 @@ class LoginView extends HookWidget {
                         ),
                         SizedBox(height: 20.h),
                         CustomButton(
-                          onTap: () {},
+                          onTap: () => sl<AuthBloc>().add(
+                            const AuthEvent.signInEmail(),
+                          ),
                           text: AppContentTexts.login,
                         ),
-                        SizedBox(height: 25.h),
-                        const OrLoginWithBody()
+                        const OrLoginWithBody(),
+                        GridView.builder(
+                          padding: EdgeInsets.zero,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: LoginMethods.methodTexts.length,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            childAspectRatio: 3,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                          ),
+                          itemBuilder: (context, index) => LoginMethodButton(
+                            loginMethodModel: LoginMethodModel(
+                              icon: LoginMethods.methodIcons[index],
+                              title: LoginMethods.methodTexts[index],
+                              onTap: LoginMethods.onTapList[index],
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),

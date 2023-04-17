@@ -29,7 +29,7 @@ class RegisterView extends HookWidget {
         children: [
           const AuthTitleBody(
             title: AppContentTexts.register,
-            isRegister: true,
+            isBackButton: true,
           ),
           Padding(
             padding: PaddingConstants.generalPadding,
@@ -60,7 +60,9 @@ class RegisterView extends HookWidget {
                 ),
                 SizedBox(height: 20.h),
                 CustomButton(
-                  onTap: () {},
+                  onTap: () => sl<AuthBloc>().add(
+                    const AuthEvent.registerEmail(),
+                  ),
                   text: AppContentTexts.register,
                 ),
               ],
