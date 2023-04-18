@@ -1905,20 +1905,20 @@ abstract class _SignInPhone implements AuthEvent {
 
 /// @nodoc
 mixin _$AuthState {
-  UserCredential? get userCredential => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UserCredential? userCredential) initial,
+    required TResult Function(String? uid) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(UserCredential? userCredential)? initial,
+    TResult? Function(String? uid)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UserCredential? userCredential)? initial,
+    TResult Function(String? uid)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1949,7 +1949,7 @@ abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
       _$AuthStateCopyWithImpl<$Res, AuthState>;
   @useResult
-  $Res call({UserCredential? userCredential});
+  $Res call({String? uid});
 }
 
 /// @nodoc
@@ -1965,13 +1965,13 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userCredential = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_value.copyWith(
-      userCredential: freezed == userCredential
-          ? _value.userCredential
-          : userCredential // ignore: cast_nullable_to_non_nullable
-              as UserCredential?,
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -1983,7 +1983,7 @@ abstract class _$$_InitialCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UserCredential? userCredential});
+  $Res call({String? uid});
 }
 
 /// @nodoc
@@ -1996,13 +1996,13 @@ class __$$_InitialCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userCredential = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_$_Initial(
-      userCredential: freezed == userCredential
-          ? _value.userCredential
-          : userCredential // ignore: cast_nullable_to_non_nullable
-              as UserCredential?,
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2010,14 +2010,14 @@ class __$$_InitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({this.userCredential});
+  const _$_Initial({this.uid});
 
   @override
-  final UserCredential? userCredential;
+  final String? uid;
 
   @override
   String toString() {
-    return 'AuthState.initial(userCredential: $userCredential)';
+    return 'AuthState.initial(uid: $uid)';
   }
 
   @override
@@ -2025,12 +2025,11 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            (identical(other.userCredential, userCredential) ||
-                other.userCredential == userCredential));
+            (identical(other.uid, uid) || other.uid == uid));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userCredential);
+  int get hashCode => Object.hash(runtimeType, uid);
 
   @JsonKey(ignore: true)
   @override
@@ -2041,27 +2040,27 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UserCredential? userCredential) initial,
+    required TResult Function(String? uid) initial,
   }) {
-    return initial(userCredential);
+    return initial(uid);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(UserCredential? userCredential)? initial,
+    TResult? Function(String? uid)? initial,
   }) {
-    return initial?.call(userCredential);
+    return initial?.call(uid);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UserCredential? userCredential)? initial,
+    TResult Function(String? uid)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(userCredential);
+      return initial(uid);
     }
     return orElse();
   }
@@ -2096,10 +2095,10 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements AuthState {
-  const factory _Initial({final UserCredential? userCredential}) = _$_Initial;
+  const factory _Initial({final String? uid}) = _$_Initial;
 
   @override
-  UserCredential? get userCredential;
+  String? get uid;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

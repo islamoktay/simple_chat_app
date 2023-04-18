@@ -9,11 +9,12 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:simple_chat_app/core/constants/app_content_texts.dart';
 import 'package:simple_chat_app/core/dependency_injection/di.dart';
-import 'package:simple_chat_app/core/router/route_management.gr.dart';
 import 'package:simple_chat_app/core/utils/snack_bar/show_snack_bar.dart';
+import 'package:simple_chat_app/core/utils/upload_image_util/upload_image_util.dart';
 import 'package:simple_chat_app/feature/auth/domain/repo/auth_repo.dart';
 import 'package:simple_chat_app/feature/auth/presentation/bloc/auth_bloc.dart';
 import 'package:simple_chat_app/feature/auth/presentation/widgets/dialog_for_otp.dart';
+import 'package:simple_chat_app/feature/home/domain/repo/home_repo.dart';
 
 class AuthRepoImpl implements AuthRepo {
   @override
@@ -34,7 +35,7 @@ class AuthRepoImpl implements AuthRepo {
         try {
           final user = await auth.signInWithCredential(phoneAuthCredential);
           sl<AuthBloc>().add(AuthEvent.emitUser(user));
-          await sl<AppRouter>().replaceAll([const HomeRoute()]);
+          await sl<AuthBloc>().navigateAccordingToUserModel();
         } on FirebaseAuthException catch (e) {
           customSnackBar(content: e.message ?? AppContentTexts.wentWrong);
         }
@@ -53,7 +54,7 @@ class AuthRepoImpl implements AuthRepo {
             );
             auth.signInWithCredential(credential).then((result) async {
               sl<AuthBloc>().add(AuthEvent.emitUser(result));
-              await sl<AppRouter>().replaceAll([const HomeRoute()]);
+              await sl<AuthBloc>().navigateAccordingToUserModel();
             }).catchError((e) {
               customSnackBar(content: AppContentTexts.wentWrong);
             });
@@ -150,6 +151,8 @@ class AuthRepoImpl implements AuthRepo {
   Future<void> logout() async {
     if (FirebaseAuth.instance.currentUser?.isAnonymous ?? false) {
       await FirebaseAuth.instance.currentUser?.delete();
+      await sl<UploadImageUtil>().removeImage();
+      await sl<HomeRepo>().deleteUserModel();
       await FirebaseAuth.instance.signOut();
     } else {
       await FirebaseAuth.instance.signOut();

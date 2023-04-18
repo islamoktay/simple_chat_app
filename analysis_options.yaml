@@ -4,7 +4,8 @@ analyzer:
   exclude:
     - lib/**/*.g.dart
     - lib/firebase_options.dart
-
+  errors:
+    invalid_annotation_target: ignore
 linter:
   rules:
     public_member_api_docs: false

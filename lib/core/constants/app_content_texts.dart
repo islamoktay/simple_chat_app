@@ -18,4 +18,9 @@ static const String ok = 'OK';
 static const String otp = 'OTP Code';
 static const String sendCode = 'Send Code';
 static const String registerPassword = 'Passwords must be same.';
+static const String name = 'Name';
+static const String save = 'Save';
+static const String createUser = 'Create profile';
+static const String library= 'Library';
+static const String camera = 'Camera';
 }

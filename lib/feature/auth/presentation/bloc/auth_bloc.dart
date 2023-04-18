@@ -11,6 +11,7 @@ import 'package:simple_chat_app/core/theme/app_colors.dart';
 import 'package:simple_chat_app/core/theme/custom_text_styles.dart';
 import 'package:simple_chat_app/core/utils/snack_bar/show_snack_bar.dart';
 import 'package:simple_chat_app/feature/auth/domain/repo/auth_repo.dart';
+import 'package:simple_chat_app/feature/home/presentation/bloc/home_bloc.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -75,10 +76,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final user = await authRepo.anonymousLogin();
       emit(
         state.copyWith(
-          userCredential: user,
+          uid: user.user?.uid,
         ),
       );
-      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+      await navigateAccordingToUserModel();
     } on FirebaseAuthException catch (e) {
       customSnackBar(
         content: e.message ?? AppContentTexts.wentWrong,
@@ -103,7 +104,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onEmitUser(_EmitUser event, Emitter<AuthState> emit) async =>
-      emit(state.copyWith(userCredential: event.user));
+      emit(
+        state.copyWith(
+          uid: event.user.user?.uid,
+        ),
+      );
 
   FutureOr<void> _onRegisterEmail(
     _RegisterEmail event,
@@ -119,10 +124,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         );
         emit(
           state.copyWith(
-            userCredential: user,
+            uid: user.user?.uid,
           ),
         );
-        await sl<AppRouter>().replaceAll([const HomeRoute()]);
+        await navigateAccordingToUserModel();
       } else {
         customSnackBar(
           content: AppContentTexts.registerPassword,
@@ -146,10 +151,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       );
       emit(
         state.copyWith(
-          userCredential: user,
+          uid: user.user?.uid,
         ),
       );
-      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+      await navigateAccordingToUserModel();
     } on FirebaseAuthException catch (e) {
       customSnackBar(
         content: e.message ?? AppContentTexts.wentWrong,
@@ -165,10 +170,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final user = await authRepo.googleLogin();
       emit(
         state.copyWith(
-          userCredential: user,
+          uid: user.user?.uid,
         ),
       );
-      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+      await navigateAccordingToUserModel();
     } on FirebaseAuthException catch (e) {
       customSnackBar(
         content: e.message ?? AppContentTexts.wentWrong,
@@ -184,10 +189,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final user = await authRepo.facebookLogin();
       emit(
         state.copyWith(
-          userCredential: user,
+          uid: user.user?.uid,
         ),
       );
-      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+      await navigateAccordingToUserModel();
     } on FirebaseAuthException catch (e) {
       customSnackBar(
         content: e.message ?? AppContentTexts.wentWrong,
@@ -203,10 +208,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final user = await authRepo.appleLogin();
       emit(
         state.copyWith(
-          userCredential: user,
+          uid: user.user?.uid,
         ),
       );
-      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+      await navigateAccordingToUserModel();
     } on FirebaseAuthException catch (e) {
       customSnackBar(
         content: e.message ?? AppContentTexts.wentWrong,
@@ -222,7 +227,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       if (user == null) {
         await sl<AppRouter>().replaceAll([const LoginRoute()]);
       } else {
-        await sl<AppRouter>().replaceAll([const HomeRoute()]);
+        emit(
+          state.copyWith(
+            uid: user.uid,
+          ),
+        );
+        await navigateAccordingToUserModel();
       }
     });
   }
@@ -236,6 +246,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       customSnackBar(
         content: e.message ?? AppContentTexts.wentWrong,
       );
+    }
+  }
+
+  Future<void> navigateAccordingToUserModel() async {
+    sl<HomeBloc>().add(const HomeEvent.getUserModel());
+    final userModel = sl<HomeBloc>().state.userModel;
+    if (userModel != null) {
+      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+    } else {
+      await sl<AppRouter>().replaceAll([const CreateUserRoute()]);
     }
   }
 }

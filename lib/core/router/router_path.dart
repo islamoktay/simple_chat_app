@@ -6,4 +6,5 @@ static const splashView = '/splashView';
 static const registerView = '/registerView';
 static const loginView = '/loginView';
 static const phoneAuthView = '/phoneAuthView';
+static const createUserView = '/createUserView';
 }
