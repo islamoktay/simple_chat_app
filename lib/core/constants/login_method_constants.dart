@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:simple_chat_app/core/constants/assets.gen.dart';
 import 'package:simple_chat_app/core/dependency_injection/di.dart';
@@ -19,12 +21,12 @@ class LoginMethodModel {
 }
 
 class LoginMethods {
-  static const List<String> methodTexts = [
+  static List<String> methodTexts = [
     'Anonymous',
     'Phone',
     'Google',
     'Facebook',
-    'Apple',
+    if (Platform.isIOS) 'Apple',
   ];
   static List<Widget> methodIcons = [
     // Anonymous Icon
@@ -39,7 +41,7 @@ class LoginMethods {
     ),
     Assets.icons.googleIcon.image(),
     Assets.icons.facebookIcon.image(),
-    Assets.icons.appleIcon.image(),
+    if (Platform.isIOS) Assets.icons.appleIcon.image(),
   ];
   static List<VoidCallback> onTapList = [
     // Anonymous Function
@@ -47,10 +49,10 @@ class LoginMethods {
     // Phone Function
     () async => sl<AppRouter>().pushNamed(RouterPath.phoneAuthView),
     // Google Function
-    () {},
+    () => sl<AuthBloc>().add(const AuthEvent.signInGoogle()),
     // Facebook Function
-    () {},
+    () => sl<AuthBloc>().add(const AuthEvent.signInFacebook()),
     // Apple Function
-    () {},
+    if (Platform.isIOS) () => sl<AuthBloc>().add(const AuthEvent.signInApple()),
   ];
 }

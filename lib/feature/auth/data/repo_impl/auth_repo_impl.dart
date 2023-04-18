@@ -1,5 +1,12 @@
+import 'dart:convert';
+import 'dart:math';
+
+import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:simple_chat_app/core/constants/app_content_texts.dart';
 import 'package:simple_chat_app/core/dependency_injection/di.dart';
 import 'package:simple_chat_app/core/router/route_management.gr.dart';
@@ -83,5 +90,69 @@ class AuthRepoImpl implements AuthRepo {
       password: password,
     );
     return user;
+  }
+
+  @override
+  Future<UserCredential> googleLogin() async {
+    final googleUser = await GoogleSignIn().signIn();
+    final googleAuth = await googleUser?.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    return FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  @override
+  Future<UserCredential> facebookLogin() async {
+    final loginResult = await FacebookAuth.instance.login();
+    final facebookAuthCredential = FacebookAuthProvider.credential(
+      loginResult.accessToken?.token ?? '',
+    );
+    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+  }
+
+  @override
+  Future<UserCredential> appleLogin() async {
+    final rawNonce = generateNonce();
+    final nonce = sha256ofString(rawNonce);
+
+    final appleCredential = await SignInWithApple.getAppleIDCredential(
+      scopes: [
+        AppleIDAuthorizationScopes.email,
+        AppleIDAuthorizationScopes.fullName,
+      ],
+      nonce: nonce,
+    );
+    final oauthCredential = OAuthProvider('apple.com').credential(
+      idToken: appleCredential.identityToken,
+      rawNonce: rawNonce,
+    );
+    return FirebaseAuth.instance.signInWithCredential(oauthCredential);
+  }
+
+  String generateNonce([int length = 32]) {
+    const charset =
+        '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._';
+    final random = Random.secure();
+    return List.generate(length, (_) => charset[random.nextInt(charset.length)])
+        .join();
+  }
+
+  String sha256ofString(String input) {
+    final bytes = utf8.encode(input);
+    final digest = sha256.convert(bytes);
+    return digest.toString();
+  }
+
+  @override
+  Future<void> logout() async {
+    if (FirebaseAuth.instance.currentUser?.isAnonymous ?? false) {
+      await FirebaseAuth.instance.currentUser?.delete();
+      await FirebaseAuth.instance.signOut();
+    } else {
+      await FirebaseAuth.instance.signOut();
+    }
   }
 }

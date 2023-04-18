@@ -23,6 +23,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SignInEmail>(_onSignInEmail);
     on<_SignInAnonymously>(_onSignInAnonymously);
     on<_SignInPhone>(_onSignInPhone);
+    on<_SignInGoogle>(_onSignInGoogle);
+    on<_SignInFacebook>(_onSignInFacebook);
+    on<_SignInApple>(_onSignInApple);
+    on<_AuthStateChanges>(_onAuthStateChanges);
+    on<_Logout>(_onLogout);
   }
 
   final AuthRepo authRepo;
@@ -145,6 +150,88 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         ),
       );
       await sl<AppRouter>().replaceAll([const HomeRoute()]);
+    } on FirebaseAuthException catch (e) {
+      customSnackBar(
+        content: e.message ?? AppContentTexts.wentWrong,
+      );
+    }
+  }
+
+  Future<FutureOr<void>> _onSignInGoogle(
+    _SignInGoogle event,
+    Emitter<AuthState> emit,
+  ) async {
+    try {
+      final user = await authRepo.googleLogin();
+      emit(
+        state.copyWith(
+          userCredential: user,
+        ),
+      );
+      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+    } on FirebaseAuthException catch (e) {
+      customSnackBar(
+        content: e.message ?? AppContentTexts.wentWrong,
+      );
+    }
+  }
+
+  FutureOr<void> _onSignInFacebook(
+    _SignInFacebook event,
+    Emitter<AuthState> emit,
+  ) async {
+    try {
+      final user = await authRepo.facebookLogin();
+      emit(
+        state.copyWith(
+          userCredential: user,
+        ),
+      );
+      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+    } on FirebaseAuthException catch (e) {
+      customSnackBar(
+        content: e.message ?? AppContentTexts.wentWrong,
+      );
+    }
+  }
+
+  FutureOr<void> _onSignInApple(
+    _SignInApple event,
+    Emitter<AuthState> emit,
+  ) async {
+    try {
+      final user = await authRepo.appleLogin();
+      emit(
+        state.copyWith(
+          userCredential: user,
+        ),
+      );
+      await sl<AppRouter>().replaceAll([const HomeRoute()]);
+    } on FirebaseAuthException catch (e) {
+      customSnackBar(
+        content: e.message ?? AppContentTexts.wentWrong,
+      );
+    }
+  }
+
+  FutureOr<void> _onAuthStateChanges(
+    _AuthStateChanges event,
+    Emitter<AuthState> emit,
+  ) async {
+    FirebaseAuth.instance.authStateChanges().listen((User? user) async {
+      if (user == null) {
+        await sl<AppRouter>().replaceAll([const LoginRoute()]);
+      } else {
+        await sl<AppRouter>().replaceAll([const HomeRoute()]);
+      }
+    });
+  }
+
+  FutureOr<void> _onLogout(_Logout event, Emitter<AuthState> emit) async {
+    try {
+      await authRepo.logout();
+      emit(const _Initial());
+      await sl<AppRouter>().replaceAll([const LoginRoute()]);
     } on FirebaseAuthException catch (e) {
       customSnackBar(
         content: e.message ?? AppContentTexts.wentWrong,

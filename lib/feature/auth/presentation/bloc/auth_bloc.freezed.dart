@@ -21,8 +21,13 @@ mixin _$AuthEvent {
     required TResult Function() started,
     required TResult Function(UserCredential user) emitUser,
     required TResult Function() registerEmail,
+    required TResult Function() logout,
     required TResult Function() signInEmail,
     required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
     required TResult Function(BuildContext context) signInPhone,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,8 +36,13 @@ mixin _$AuthEvent {
     TResult? Function()? started,
     TResult? Function(UserCredential user)? emitUser,
     TResult? Function()? registerEmail,
+    TResult? Function()? logout,
     TResult? Function()? signInEmail,
     TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
     TResult? Function(BuildContext context)? signInPhone,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,8 +51,13 @@ mixin _$AuthEvent {
     TResult Function()? started,
     TResult Function(UserCredential user)? emitUser,
     TResult Function()? registerEmail,
+    TResult Function()? logout,
     TResult Function()? signInEmail,
     TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
     TResult Function(BuildContext context)? signInPhone,
     required TResult orElse(),
   }) =>
@@ -52,8 +67,13 @@ mixin _$AuthEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_EmitUser value) emitUser,
     required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_SignInEmail value) signInEmail,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
     required TResult Function(_SignInPhone value) signInPhone,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,8 +82,13 @@ mixin _$AuthEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_EmitUser value)? emitUser,
     TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_SignInEmail value)? signInEmail,
     TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
     TResult? Function(_SignInPhone value)? signInPhone,
   }) =>
       throw _privateConstructorUsedError;
@@ -72,8 +97,13 @@ mixin _$AuthEvent {
     TResult Function(_Started value)? started,
     TResult Function(_EmitUser value)? emitUser,
     TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
     TResult Function(_SignInEmail value)? signInEmail,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
     TResult Function(_SignInPhone value)? signInPhone,
     required TResult orElse(),
   }) =>
@@ -137,8 +167,13 @@ class _$_Started implements _Started {
     required TResult Function() started,
     required TResult Function(UserCredential user) emitUser,
     required TResult Function() registerEmail,
+    required TResult Function() logout,
     required TResult Function() signInEmail,
     required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
     required TResult Function(BuildContext context) signInPhone,
   }) {
     return started();
@@ -150,8 +185,13 @@ class _$_Started implements _Started {
     TResult? Function()? started,
     TResult? Function(UserCredential user)? emitUser,
     TResult? Function()? registerEmail,
+    TResult? Function()? logout,
     TResult? Function()? signInEmail,
     TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
     TResult? Function(BuildContext context)? signInPhone,
   }) {
     return started?.call();
@@ -163,8 +203,13 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function(UserCredential user)? emitUser,
     TResult Function()? registerEmail,
+    TResult Function()? logout,
     TResult Function()? signInEmail,
     TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
     TResult Function(BuildContext context)? signInPhone,
     required TResult orElse(),
   }) {
@@ -180,8 +225,13 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_EmitUser value) emitUser,
     required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_SignInEmail value) signInEmail,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
     required TResult Function(_SignInPhone value) signInPhone,
   }) {
     return started(this);
@@ -193,8 +243,13 @@ class _$_Started implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_EmitUser value)? emitUser,
     TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_SignInEmail value)? signInEmail,
     TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
     TResult? Function(_SignInPhone value)? signInPhone,
   }) {
     return started?.call(this);
@@ -206,8 +261,13 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_EmitUser value)? emitUser,
     TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
     TResult Function(_SignInEmail value)? signInEmail,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
     TResult Function(_SignInPhone value)? signInPhone,
     required TResult orElse(),
   }) {
@@ -289,8 +349,13 @@ class _$_EmitUser implements _EmitUser {
     required TResult Function() started,
     required TResult Function(UserCredential user) emitUser,
     required TResult Function() registerEmail,
+    required TResult Function() logout,
     required TResult Function() signInEmail,
     required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
     required TResult Function(BuildContext context) signInPhone,
   }) {
     return emitUser(user);
@@ -302,8 +367,13 @@ class _$_EmitUser implements _EmitUser {
     TResult? Function()? started,
     TResult? Function(UserCredential user)? emitUser,
     TResult? Function()? registerEmail,
+    TResult? Function()? logout,
     TResult? Function()? signInEmail,
     TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
     TResult? Function(BuildContext context)? signInPhone,
   }) {
     return emitUser?.call(user);
@@ -315,8 +385,13 @@ class _$_EmitUser implements _EmitUser {
     TResult Function()? started,
     TResult Function(UserCredential user)? emitUser,
     TResult Function()? registerEmail,
+    TResult Function()? logout,
     TResult Function()? signInEmail,
     TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
     TResult Function(BuildContext context)? signInPhone,
     required TResult orElse(),
   }) {
@@ -332,8 +407,13 @@ class _$_EmitUser implements _EmitUser {
     required TResult Function(_Started value) started,
     required TResult Function(_EmitUser value) emitUser,
     required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_SignInEmail value) signInEmail,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
     required TResult Function(_SignInPhone value) signInPhone,
   }) {
     return emitUser(this);
@@ -345,8 +425,13 @@ class _$_EmitUser implements _EmitUser {
     TResult? Function(_Started value)? started,
     TResult? Function(_EmitUser value)? emitUser,
     TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_SignInEmail value)? signInEmail,
     TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
     TResult? Function(_SignInPhone value)? signInPhone,
   }) {
     return emitUser?.call(this);
@@ -358,8 +443,13 @@ class _$_EmitUser implements _EmitUser {
     TResult Function(_Started value)? started,
     TResult Function(_EmitUser value)? emitUser,
     TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
     TResult Function(_SignInEmail value)? signInEmail,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
     TResult Function(_SignInPhone value)? signInPhone,
     required TResult orElse(),
   }) {
@@ -420,8 +510,13 @@ class _$_RegisterEmail implements _RegisterEmail {
     required TResult Function() started,
     required TResult Function(UserCredential user) emitUser,
     required TResult Function() registerEmail,
+    required TResult Function() logout,
     required TResult Function() signInEmail,
     required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
     required TResult Function(BuildContext context) signInPhone,
   }) {
     return registerEmail();
@@ -433,8 +528,13 @@ class _$_RegisterEmail implements _RegisterEmail {
     TResult? Function()? started,
     TResult? Function(UserCredential user)? emitUser,
     TResult? Function()? registerEmail,
+    TResult? Function()? logout,
     TResult? Function()? signInEmail,
     TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
     TResult? Function(BuildContext context)? signInPhone,
   }) {
     return registerEmail?.call();
@@ -446,8 +546,13 @@ class _$_RegisterEmail implements _RegisterEmail {
     TResult Function()? started,
     TResult Function(UserCredential user)? emitUser,
     TResult Function()? registerEmail,
+    TResult Function()? logout,
     TResult Function()? signInEmail,
     TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
     TResult Function(BuildContext context)? signInPhone,
     required TResult orElse(),
   }) {
@@ -463,8 +568,13 @@ class _$_RegisterEmail implements _RegisterEmail {
     required TResult Function(_Started value) started,
     required TResult Function(_EmitUser value) emitUser,
     required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_SignInEmail value) signInEmail,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
     required TResult Function(_SignInPhone value) signInPhone,
   }) {
     return registerEmail(this);
@@ -476,8 +586,13 @@ class _$_RegisterEmail implements _RegisterEmail {
     TResult? Function(_Started value)? started,
     TResult? Function(_EmitUser value)? emitUser,
     TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_SignInEmail value)? signInEmail,
     TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
     TResult? Function(_SignInPhone value)? signInPhone,
   }) {
     return registerEmail?.call(this);
@@ -489,8 +604,13 @@ class _$_RegisterEmail implements _RegisterEmail {
     TResult Function(_Started value)? started,
     TResult Function(_EmitUser value)? emitUser,
     TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
     TResult Function(_SignInEmail value)? signInEmail,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
     TResult Function(_SignInPhone value)? signInPhone,
     required TResult orElse(),
   }) {
@@ -503,6 +623,160 @@ class _$_RegisterEmail implements _RegisterEmail {
 
 abstract class _RegisterEmail implements AuthEvent {
   const factory _RegisterEmail() = _$_RegisterEmail;
+}
+
+/// @nodoc
+abstract class _$$_LogoutCopyWith<$Res> {
+  factory _$$_LogoutCopyWith(_$_Logout value, $Res Function(_$_Logout) then) =
+      __$$_LogoutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_LogoutCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_Logout>
+    implements _$$_LogoutCopyWith<$Res> {
+  __$$_LogoutCopyWithImpl(_$_Logout _value, $Res Function(_$_Logout) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Logout implements _Logout {
+  const _$_Logout();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logout()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Logout);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserCredential user) emitUser,
+    required TResult Function() registerEmail,
+    required TResult Function() logout,
+    required TResult Function() signInEmail,
+    required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
+    required TResult Function(BuildContext context) signInPhone,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(UserCredential user)? emitUser,
+    TResult? Function()? registerEmail,
+    TResult? Function()? logout,
+    TResult? Function()? signInEmail,
+    TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
+    TResult? Function(BuildContext context)? signInPhone,
+  }) {
+    return logout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserCredential user)? emitUser,
+    TResult Function()? registerEmail,
+    TResult Function()? logout,
+    TResult Function()? signInEmail,
+    TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
+    TResult Function(BuildContext context)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_EmitUser value) emitUser,
+    required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_SignInEmail value) signInEmail,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
+    required TResult Function(_SignInPhone value) signInPhone,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_EmitUser value)? emitUser,
+    TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_SignInEmail value)? signInEmail,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
+    TResult? Function(_SignInPhone value)? signInPhone,
+  }) {
+    return logout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_EmitUser value)? emitUser,
+    TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_SignInEmail value)? signInEmail,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
+    TResult Function(_SignInPhone value)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Logout implements AuthEvent {
+  const factory _Logout() = _$_Logout;
 }
 
 /// @nodoc
@@ -546,8 +820,13 @@ class _$_SignInEmail implements _SignInEmail {
     required TResult Function() started,
     required TResult Function(UserCredential user) emitUser,
     required TResult Function() registerEmail,
+    required TResult Function() logout,
     required TResult Function() signInEmail,
     required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
     required TResult Function(BuildContext context) signInPhone,
   }) {
     return signInEmail();
@@ -559,8 +838,13 @@ class _$_SignInEmail implements _SignInEmail {
     TResult? Function()? started,
     TResult? Function(UserCredential user)? emitUser,
     TResult? Function()? registerEmail,
+    TResult? Function()? logout,
     TResult? Function()? signInEmail,
     TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
     TResult? Function(BuildContext context)? signInPhone,
   }) {
     return signInEmail?.call();
@@ -572,8 +856,13 @@ class _$_SignInEmail implements _SignInEmail {
     TResult Function()? started,
     TResult Function(UserCredential user)? emitUser,
     TResult Function()? registerEmail,
+    TResult Function()? logout,
     TResult Function()? signInEmail,
     TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
     TResult Function(BuildContext context)? signInPhone,
     required TResult orElse(),
   }) {
@@ -589,8 +878,13 @@ class _$_SignInEmail implements _SignInEmail {
     required TResult Function(_Started value) started,
     required TResult Function(_EmitUser value) emitUser,
     required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_SignInEmail value) signInEmail,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
     required TResult Function(_SignInPhone value) signInPhone,
   }) {
     return signInEmail(this);
@@ -602,8 +896,13 @@ class _$_SignInEmail implements _SignInEmail {
     TResult? Function(_Started value)? started,
     TResult? Function(_EmitUser value)? emitUser,
     TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_SignInEmail value)? signInEmail,
     TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
     TResult? Function(_SignInPhone value)? signInPhone,
   }) {
     return signInEmail?.call(this);
@@ -615,8 +914,13 @@ class _$_SignInEmail implements _SignInEmail {
     TResult Function(_Started value)? started,
     TResult Function(_EmitUser value)? emitUser,
     TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
     TResult Function(_SignInEmail value)? signInEmail,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
     TResult Function(_SignInPhone value)? signInPhone,
     required TResult orElse(),
   }) {
@@ -672,8 +976,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     required TResult Function() started,
     required TResult Function(UserCredential user) emitUser,
     required TResult Function() registerEmail,
+    required TResult Function() logout,
     required TResult Function() signInEmail,
     required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
     required TResult Function(BuildContext context) signInPhone,
   }) {
     return signInAnonymously();
@@ -685,8 +994,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult? Function()? started,
     TResult? Function(UserCredential user)? emitUser,
     TResult? Function()? registerEmail,
+    TResult? Function()? logout,
     TResult? Function()? signInEmail,
     TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
     TResult? Function(BuildContext context)? signInPhone,
   }) {
     return signInAnonymously?.call();
@@ -698,8 +1012,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function()? started,
     TResult Function(UserCredential user)? emitUser,
     TResult Function()? registerEmail,
+    TResult Function()? logout,
     TResult Function()? signInEmail,
     TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
     TResult Function(BuildContext context)? signInPhone,
     required TResult orElse(),
   }) {
@@ -715,8 +1034,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     required TResult Function(_Started value) started,
     required TResult Function(_EmitUser value) emitUser,
     required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_SignInEmail value) signInEmail,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
     required TResult Function(_SignInPhone value) signInPhone,
   }) {
     return signInAnonymously(this);
@@ -728,8 +1052,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult? Function(_Started value)? started,
     TResult? Function(_EmitUser value)? emitUser,
     TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_SignInEmail value)? signInEmail,
     TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
     TResult? Function(_SignInPhone value)? signInPhone,
   }) {
     return signInAnonymously?.call(this);
@@ -741,8 +1070,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function(_Started value)? started,
     TResult Function(_EmitUser value)? emitUser,
     TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
     TResult Function(_SignInEmail value)? signInEmail,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
     TResult Function(_SignInPhone value)? signInPhone,
     required TResult orElse(),
   }) {
@@ -755,6 +1089,630 @@ class _$_SignInAnonymously implements _SignInAnonymously {
 
 abstract class _SignInAnonymously implements AuthEvent {
   const factory _SignInAnonymously() = _$_SignInAnonymously;
+}
+
+/// @nodoc
+abstract class _$$_SignInGoogleCopyWith<$Res> {
+  factory _$$_SignInGoogleCopyWith(
+          _$_SignInGoogle value, $Res Function(_$_SignInGoogle) then) =
+      __$$_SignInGoogleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SignInGoogleCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_SignInGoogle>
+    implements _$$_SignInGoogleCopyWith<$Res> {
+  __$$_SignInGoogleCopyWithImpl(
+      _$_SignInGoogle _value, $Res Function(_$_SignInGoogle) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_SignInGoogle implements _SignInGoogle {
+  const _$_SignInGoogle();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signInGoogle()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SignInGoogle);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserCredential user) emitUser,
+    required TResult Function() registerEmail,
+    required TResult Function() logout,
+    required TResult Function() signInEmail,
+    required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
+    required TResult Function(BuildContext context) signInPhone,
+  }) {
+    return signInGoogle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(UserCredential user)? emitUser,
+    TResult? Function()? registerEmail,
+    TResult? Function()? logout,
+    TResult? Function()? signInEmail,
+    TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
+    TResult? Function(BuildContext context)? signInPhone,
+  }) {
+    return signInGoogle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserCredential user)? emitUser,
+    TResult Function()? registerEmail,
+    TResult Function()? logout,
+    TResult Function()? signInEmail,
+    TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
+    TResult Function(BuildContext context)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (signInGoogle != null) {
+      return signInGoogle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_EmitUser value) emitUser,
+    required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_SignInEmail value) signInEmail,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
+    required TResult Function(_SignInPhone value) signInPhone,
+  }) {
+    return signInGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_EmitUser value)? emitUser,
+    TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_SignInEmail value)? signInEmail,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
+    TResult? Function(_SignInPhone value)? signInPhone,
+  }) {
+    return signInGoogle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_EmitUser value)? emitUser,
+    TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_SignInEmail value)? signInEmail,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
+    TResult Function(_SignInPhone value)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (signInGoogle != null) {
+      return signInGoogle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInGoogle implements AuthEvent {
+  const factory _SignInGoogle() = _$_SignInGoogle;
+}
+
+/// @nodoc
+abstract class _$$_SignInFacebookCopyWith<$Res> {
+  factory _$$_SignInFacebookCopyWith(
+          _$_SignInFacebook value, $Res Function(_$_SignInFacebook) then) =
+      __$$_SignInFacebookCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SignInFacebookCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_SignInFacebook>
+    implements _$$_SignInFacebookCopyWith<$Res> {
+  __$$_SignInFacebookCopyWithImpl(
+      _$_SignInFacebook _value, $Res Function(_$_SignInFacebook) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_SignInFacebook implements _SignInFacebook {
+  const _$_SignInFacebook();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signInFacebook()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SignInFacebook);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserCredential user) emitUser,
+    required TResult Function() registerEmail,
+    required TResult Function() logout,
+    required TResult Function() signInEmail,
+    required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
+    required TResult Function(BuildContext context) signInPhone,
+  }) {
+    return signInFacebook();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(UserCredential user)? emitUser,
+    TResult? Function()? registerEmail,
+    TResult? Function()? logout,
+    TResult? Function()? signInEmail,
+    TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
+    TResult? Function(BuildContext context)? signInPhone,
+  }) {
+    return signInFacebook?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserCredential user)? emitUser,
+    TResult Function()? registerEmail,
+    TResult Function()? logout,
+    TResult Function()? signInEmail,
+    TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
+    TResult Function(BuildContext context)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (signInFacebook != null) {
+      return signInFacebook();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_EmitUser value) emitUser,
+    required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_SignInEmail value) signInEmail,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
+    required TResult Function(_SignInPhone value) signInPhone,
+  }) {
+    return signInFacebook(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_EmitUser value)? emitUser,
+    TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_SignInEmail value)? signInEmail,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
+    TResult? Function(_SignInPhone value)? signInPhone,
+  }) {
+    return signInFacebook?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_EmitUser value)? emitUser,
+    TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_SignInEmail value)? signInEmail,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
+    TResult Function(_SignInPhone value)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (signInFacebook != null) {
+      return signInFacebook(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInFacebook implements AuthEvent {
+  const factory _SignInFacebook() = _$_SignInFacebook;
+}
+
+/// @nodoc
+abstract class _$$_SignInAppleCopyWith<$Res> {
+  factory _$$_SignInAppleCopyWith(
+          _$_SignInApple value, $Res Function(_$_SignInApple) then) =
+      __$$_SignInAppleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SignInAppleCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_SignInApple>
+    implements _$$_SignInAppleCopyWith<$Res> {
+  __$$_SignInAppleCopyWithImpl(
+      _$_SignInApple _value, $Res Function(_$_SignInApple) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_SignInApple implements _SignInApple {
+  const _$_SignInApple();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signInApple()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SignInApple);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserCredential user) emitUser,
+    required TResult Function() registerEmail,
+    required TResult Function() logout,
+    required TResult Function() signInEmail,
+    required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
+    required TResult Function(BuildContext context) signInPhone,
+  }) {
+    return signInApple();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(UserCredential user)? emitUser,
+    TResult? Function()? registerEmail,
+    TResult? Function()? logout,
+    TResult? Function()? signInEmail,
+    TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
+    TResult? Function(BuildContext context)? signInPhone,
+  }) {
+    return signInApple?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserCredential user)? emitUser,
+    TResult Function()? registerEmail,
+    TResult Function()? logout,
+    TResult Function()? signInEmail,
+    TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
+    TResult Function(BuildContext context)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (signInApple != null) {
+      return signInApple();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_EmitUser value) emitUser,
+    required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_SignInEmail value) signInEmail,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
+    required TResult Function(_SignInPhone value) signInPhone,
+  }) {
+    return signInApple(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_EmitUser value)? emitUser,
+    TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_SignInEmail value)? signInEmail,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
+    TResult? Function(_SignInPhone value)? signInPhone,
+  }) {
+    return signInApple?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_EmitUser value)? emitUser,
+    TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_SignInEmail value)? signInEmail,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
+    TResult Function(_SignInPhone value)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (signInApple != null) {
+      return signInApple(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInApple implements AuthEvent {
+  const factory _SignInApple() = _$_SignInApple;
+}
+
+/// @nodoc
+abstract class _$$_AuthStateChangesCopyWith<$Res> {
+  factory _$$_AuthStateChangesCopyWith(
+          _$_AuthStateChanges value, $Res Function(_$_AuthStateChanges) then) =
+      __$$_AuthStateChangesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AuthStateChangesCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_AuthStateChanges>
+    implements _$$_AuthStateChangesCopyWith<$Res> {
+  __$$_AuthStateChangesCopyWithImpl(
+      _$_AuthStateChanges _value, $Res Function(_$_AuthStateChanges) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_AuthStateChanges implements _AuthStateChanges {
+  const _$_AuthStateChanges();
+
+  @override
+  String toString() {
+    return 'AuthEvent.authStateChanges()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_AuthStateChanges);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserCredential user) emitUser,
+    required TResult Function() registerEmail,
+    required TResult Function() logout,
+    required TResult Function() signInEmail,
+    required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
+    required TResult Function(BuildContext context) signInPhone,
+  }) {
+    return authStateChanges();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(UserCredential user)? emitUser,
+    TResult? Function()? registerEmail,
+    TResult? Function()? logout,
+    TResult? Function()? signInEmail,
+    TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
+    TResult? Function(BuildContext context)? signInPhone,
+  }) {
+    return authStateChanges?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserCredential user)? emitUser,
+    TResult Function()? registerEmail,
+    TResult Function()? logout,
+    TResult Function()? signInEmail,
+    TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
+    TResult Function(BuildContext context)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (authStateChanges != null) {
+      return authStateChanges();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_EmitUser value) emitUser,
+    required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_SignInEmail value) signInEmail,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
+    required TResult Function(_SignInPhone value) signInPhone,
+  }) {
+    return authStateChanges(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_EmitUser value)? emitUser,
+    TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_SignInEmail value)? signInEmail,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
+    TResult? Function(_SignInPhone value)? signInPhone,
+  }) {
+    return authStateChanges?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_EmitUser value)? emitUser,
+    TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_SignInEmail value)? signInEmail,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
+    TResult Function(_SignInPhone value)? signInPhone,
+    required TResult orElse(),
+  }) {
+    if (authStateChanges != null) {
+      return authStateChanges(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthStateChanges implements AuthEvent {
+  const factory _AuthStateChanges() = _$_AuthStateChanges;
 }
 
 /// @nodoc
@@ -824,8 +1782,13 @@ class _$_SignInPhone implements _SignInPhone {
     required TResult Function() started,
     required TResult Function(UserCredential user) emitUser,
     required TResult Function() registerEmail,
+    required TResult Function() logout,
     required TResult Function() signInEmail,
     required TResult Function() signInAnonymously,
+    required TResult Function() signInGoogle,
+    required TResult Function() signInFacebook,
+    required TResult Function() signInApple,
+    required TResult Function() authStateChanges,
     required TResult Function(BuildContext context) signInPhone,
   }) {
     return signInPhone(context);
@@ -837,8 +1800,13 @@ class _$_SignInPhone implements _SignInPhone {
     TResult? Function()? started,
     TResult? Function(UserCredential user)? emitUser,
     TResult? Function()? registerEmail,
+    TResult? Function()? logout,
     TResult? Function()? signInEmail,
     TResult? Function()? signInAnonymously,
+    TResult? Function()? signInGoogle,
+    TResult? Function()? signInFacebook,
+    TResult? Function()? signInApple,
+    TResult? Function()? authStateChanges,
     TResult? Function(BuildContext context)? signInPhone,
   }) {
     return signInPhone?.call(context);
@@ -850,8 +1818,13 @@ class _$_SignInPhone implements _SignInPhone {
     TResult Function()? started,
     TResult Function(UserCredential user)? emitUser,
     TResult Function()? registerEmail,
+    TResult Function()? logout,
     TResult Function()? signInEmail,
     TResult Function()? signInAnonymously,
+    TResult Function()? signInGoogle,
+    TResult Function()? signInFacebook,
+    TResult Function()? signInApple,
+    TResult Function()? authStateChanges,
     TResult Function(BuildContext context)? signInPhone,
     required TResult orElse(),
   }) {
@@ -867,8 +1840,13 @@ class _$_SignInPhone implements _SignInPhone {
     required TResult Function(_Started value) started,
     required TResult Function(_EmitUser value) emitUser,
     required TResult Function(_RegisterEmail value) registerEmail,
+    required TResult Function(_Logout value) logout,
     required TResult Function(_SignInEmail value) signInEmail,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
+    required TResult Function(_SignInGoogle value) signInGoogle,
+    required TResult Function(_SignInFacebook value) signInFacebook,
+    required TResult Function(_SignInApple value) signInApple,
+    required TResult Function(_AuthStateChanges value) authStateChanges,
     required TResult Function(_SignInPhone value) signInPhone,
   }) {
     return signInPhone(this);
@@ -880,8 +1858,13 @@ class _$_SignInPhone implements _SignInPhone {
     TResult? Function(_Started value)? started,
     TResult? Function(_EmitUser value)? emitUser,
     TResult? Function(_RegisterEmail value)? registerEmail,
+    TResult? Function(_Logout value)? logout,
     TResult? Function(_SignInEmail value)? signInEmail,
     TResult? Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInGoogle value)? signInGoogle,
+    TResult? Function(_SignInFacebook value)? signInFacebook,
+    TResult? Function(_SignInApple value)? signInApple,
+    TResult? Function(_AuthStateChanges value)? authStateChanges,
     TResult? Function(_SignInPhone value)? signInPhone,
   }) {
     return signInPhone?.call(this);
@@ -893,8 +1876,13 @@ class _$_SignInPhone implements _SignInPhone {
     TResult Function(_Started value)? started,
     TResult Function(_EmitUser value)? emitUser,
     TResult Function(_RegisterEmail value)? registerEmail,
+    TResult Function(_Logout value)? logout,
     TResult Function(_SignInEmail value)? signInEmail,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult Function(_SignInGoogle value)? signInGoogle,
+    TResult Function(_SignInFacebook value)? signInFacebook,
+    TResult Function(_SignInApple value)? signInApple,
+    TResult Function(_AuthStateChanges value)? authStateChanges,
     TResult Function(_SignInPhone value)? signInPhone,
     required TResult orElse(),
   }) {
