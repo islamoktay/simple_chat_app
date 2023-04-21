@@ -21,35 +21,37 @@ class CreateUserView extends StatelessWidget {
         value: sl<HomeBloc>(),
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
-            return Column(
-              children: [
-                const AuthTitleBody(
-                  title: AppContentTexts.createUser,
-                ),
-                SizedBox(height: 20.h),
-                Padding(
-                  padding: PaddingConstants.generalPadding,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const ChoosePhotoBody(),
-                      SizedBox(height: 20.h),
-                      CustomTextFormField(
-                        textInputAction: TextInputAction.done,
-                        controller: sl<HomeBloc>().nameController,
-                        labelText: AppContentTexts.name,
-                        maxLines: 1,
-                      ),
-                      SizedBox(height: 20.h),
-                      CustomButton(
-                        text: AppContentTexts.save,
-                        onTap: () => sl<HomeBloc>()
-                            .add(const HomeEvent.createUserModel()),
-                      ),
-                    ],
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  const AuthTitleBody(
+                    title: AppContentTexts.createUser,
                   ),
-                ),
-              ],
+                  SizedBox(height: 20.h),
+                  Padding(
+                    padding: PaddingConstants.generalPadding,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const ChoosePhotoBody(),
+                        SizedBox(height: 20.h),
+                        CustomTextFormField(
+                          textInputAction: TextInputAction.done,
+                          controller: sl<HomeBloc>().nameController,
+                          labelText: AppContentTexts.name,
+                          maxLines: 1,
+                        ),
+                        SizedBox(height: 20.h),
+                        CustomButton(
+                          text: AppContentTexts.save,
+                          onTap: () => sl<HomeBloc>()
+                              .add(const HomeEvent.createUserModel()),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),

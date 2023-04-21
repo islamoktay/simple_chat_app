@@ -7,4 +7,5 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.getUsers() = _GetUsers;
   const factory HomeEvent.choosePhoto(ImageSource imageSource) = _ChoosePhoto;
   const factory HomeEvent.createUserModel() = _CreateUserModel;
+  const factory HomeEvent.updateFcmToken() = _UpdateFcmToken;
 }

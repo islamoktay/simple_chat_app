@@ -6,6 +6,7 @@ import 'package:simple_chat_app/feature/auth/presentation/view/register_view.dar
 import 'package:simple_chat_app/feature/discover/presentation/view/discover_view.dart';
 import 'package:simple_chat_app/feature/home/presentation/view/create_user_view.dart';
 import 'package:simple_chat_app/feature/home/presentation/view/home_view.dart';
+import 'package:simple_chat_app/feature/messages/presentation/view/message_detail_view.dart';
 import 'package:simple_chat_app/feature/messages/presentation/view/messages_view.dart';
 import 'package:simple_chat_app/feature/splash/presentation/view/splash_view.dart';
 
@@ -31,6 +32,10 @@ import 'package:simple_chat_app/feature/splash/presentation/view/splash_view.dar
     AutoRoute(
       path: RouterPath.createUserView,
       page: CreateUserView,
+    ),
+    AutoRoute(
+      path: RouterPath.messageDetailView,
+      page: MessageDetailView,
     ),
     AutoRoute(
       path: RouterPath.homeView,

@@ -25,50 +25,53 @@ class RegisterView extends HookWidget {
         textTwo: AppContentTexts.login,
         onTap: () => context.router.pop(),
       ),
-      body: Column(
-        children: [
-          const AuthTitleBody(
-            title: AppContentTexts.register,
-            isBackButton: true,
-          ),
-          Padding(
-            padding: PaddingConstants.generalPadding,
-            child: Column(
-              children: [
-                SizedBox(height: 20.h),
-                CustomTextFormField(
-                  textInputAction: TextInputAction.next,
-                  controller: sl<AuthBloc>().registerMailController,
-                  labelText: AppContentTexts.email,
-                  maxLines: 1,
-                ),
-                SizedBox(height: 20.h),
-                CustomTextFormField(
-                  textInputAction: TextInputAction.next,
-                  controller: sl<AuthBloc>().registerPasswordController,
-                  labelText: AppContentTexts.password,
-                  maxLines: 1,
-                  isObscureText: password,
-                ),
-                SizedBox(height: 20.h),
-                CustomTextFormField(
-                  textInputAction: TextInputAction.done,
-                  controller: sl<AuthBloc>().registerPasswordVerifierController,
-                  labelText: AppContentTexts.repeatPassword,
-                  maxLines: 1,
-                  isObscureText: passwordVerifier,
-                ),
-                SizedBox(height: 20.h),
-                CustomButton(
-                  onTap: () => sl<AuthBloc>().add(
-                    const AuthEvent.registerEmail(),
-                  ),
-                  text: AppContentTexts.register,
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const AuthTitleBody(
+              title: AppContentTexts.register,
+              isBackButton: true,
             ),
-          )
-        ],
+            Padding(
+              padding: PaddingConstants.generalPadding,
+              child: Column(
+                children: [
+                  SizedBox(height: 20.h),
+                  CustomTextFormField(
+                    textInputAction: TextInputAction.next,
+                    controller: sl<AuthBloc>().registerMailController,
+                    labelText: AppContentTexts.email,
+                    maxLines: 1,
+                  ),
+                  SizedBox(height: 20.h),
+                  CustomTextFormField(
+                    textInputAction: TextInputAction.next,
+                    controller: sl<AuthBloc>().registerPasswordController,
+                    labelText: AppContentTexts.password,
+                    maxLines: 1,
+                    isObscureText: password,
+                  ),
+                  SizedBox(height: 20.h),
+                  CustomTextFormField(
+                    textInputAction: TextInputAction.done,
+                    controller:
+                        sl<AuthBloc>().registerPasswordVerifierController,
+                    labelText: AppContentTexts.repeatPassword,
+                    maxLines: 1,
+                    isObscureText: passwordVerifier,
+                  ),
+                  SizedBox(height: 20.h),
+                  CustomButton(
+                    onTap: () => sl<AuthBloc>().add(
+                      const AuthEvent.registerEmail(),
+                    ),
+                    text: AppContentTexts.register,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

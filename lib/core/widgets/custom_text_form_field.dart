@@ -10,6 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     this.onChanged,
     this.maxLines,
+    this.minLines,
     this.validator,
     this.textInputAction,
     this.labelText,
@@ -18,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
   final void Function(String)? onChanged;
   final TextEditingController controller;
   final int? maxLines;
+  final int? minLines;
   final String? Function(String?)? validator;
   final TextInputAction? textInputAction;
   final String? labelText;
@@ -30,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
       autofocus: true,
       onChanged: onChanged,
       maxLines: maxLines,
+      minLines: minLines,
       style: CustomTextStyles.mediumText,
       cursorColor: AppColors.blackColor,
       validator: validator,

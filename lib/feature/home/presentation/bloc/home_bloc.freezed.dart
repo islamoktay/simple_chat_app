@@ -23,6 +23,7 @@ mixin _$HomeEvent {
     required TResult Function() getUsers,
     required TResult Function(ImageSource imageSource) choosePhoto,
     required TResult Function() createUserModel,
+    required TResult Function() updateFcmToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$HomeEvent {
     TResult? Function()? getUsers,
     TResult? Function(ImageSource imageSource)? choosePhoto,
     TResult? Function()? createUserModel,
+    TResult? Function()? updateFcmToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$HomeEvent {
     TResult Function()? getUsers,
     TResult Function(ImageSource imageSource)? choosePhoto,
     TResult Function()? createUserModel,
+    TResult Function()? updateFcmToken,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$HomeEvent {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_ChoosePhoto value) choosePhoto,
     required TResult Function(_CreateUserModel value) createUserModel,
+    required TResult Function(_UpdateFcmToken value) updateFcmToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$HomeEvent {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_ChoosePhoto value)? choosePhoto,
     TResult? Function(_CreateUserModel value)? createUserModel,
+    TResult? Function(_UpdateFcmToken value)? updateFcmToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$HomeEvent {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_ChoosePhoto value)? choosePhoto,
     TResult Function(_CreateUserModel value)? createUserModel,
+    TResult Function(_UpdateFcmToken value)? updateFcmToken,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +139,7 @@ class _$_Started implements _Started {
     required TResult Function() getUsers,
     required TResult Function(ImageSource imageSource) choosePhoto,
     required TResult Function() createUserModel,
+    required TResult Function() updateFcmToken,
   }) {
     return started();
   }
@@ -145,6 +152,7 @@ class _$_Started implements _Started {
     TResult? Function()? getUsers,
     TResult? Function(ImageSource imageSource)? choosePhoto,
     TResult? Function()? createUserModel,
+    TResult? Function()? updateFcmToken,
   }) {
     return started?.call();
   }
@@ -157,6 +165,7 @@ class _$_Started implements _Started {
     TResult Function()? getUsers,
     TResult Function(ImageSource imageSource)? choosePhoto,
     TResult Function()? createUserModel,
+    TResult Function()? updateFcmToken,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -173,6 +182,7 @@ class _$_Started implements _Started {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_ChoosePhoto value) choosePhoto,
     required TResult Function(_CreateUserModel value) createUserModel,
+    required TResult Function(_UpdateFcmToken value) updateFcmToken,
   }) {
     return started(this);
   }
@@ -185,6 +195,7 @@ class _$_Started implements _Started {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_ChoosePhoto value)? choosePhoto,
     TResult? Function(_CreateUserModel value)? createUserModel,
+    TResult? Function(_UpdateFcmToken value)? updateFcmToken,
   }) {
     return started?.call(this);
   }
@@ -197,6 +208,7 @@ class _$_Started implements _Started {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_ChoosePhoto value)? choosePhoto,
     TResult Function(_CreateUserModel value)? createUserModel,
+    TResult Function(_UpdateFcmToken value)? updateFcmToken,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -253,6 +265,7 @@ class _$_GetUserModel implements _GetUserModel {
     required TResult Function() getUsers,
     required TResult Function(ImageSource imageSource) choosePhoto,
     required TResult Function() createUserModel,
+    required TResult Function() updateFcmToken,
   }) {
     return getUserModel();
   }
@@ -265,6 +278,7 @@ class _$_GetUserModel implements _GetUserModel {
     TResult? Function()? getUsers,
     TResult? Function(ImageSource imageSource)? choosePhoto,
     TResult? Function()? createUserModel,
+    TResult? Function()? updateFcmToken,
   }) {
     return getUserModel?.call();
   }
@@ -277,6 +291,7 @@ class _$_GetUserModel implements _GetUserModel {
     TResult Function()? getUsers,
     TResult Function(ImageSource imageSource)? choosePhoto,
     TResult Function()? createUserModel,
+    TResult Function()? updateFcmToken,
     required TResult orElse(),
   }) {
     if (getUserModel != null) {
@@ -293,6 +308,7 @@ class _$_GetUserModel implements _GetUserModel {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_ChoosePhoto value) choosePhoto,
     required TResult Function(_CreateUserModel value) createUserModel,
+    required TResult Function(_UpdateFcmToken value) updateFcmToken,
   }) {
     return getUserModel(this);
   }
@@ -305,6 +321,7 @@ class _$_GetUserModel implements _GetUserModel {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_ChoosePhoto value)? choosePhoto,
     TResult? Function(_CreateUserModel value)? createUserModel,
+    TResult? Function(_UpdateFcmToken value)? updateFcmToken,
   }) {
     return getUserModel?.call(this);
   }
@@ -317,6 +334,7 @@ class _$_GetUserModel implements _GetUserModel {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_ChoosePhoto value)? choosePhoto,
     TResult Function(_CreateUserModel value)? createUserModel,
+    TResult Function(_UpdateFcmToken value)? updateFcmToken,
     required TResult orElse(),
   }) {
     if (getUserModel != null) {
@@ -373,6 +391,7 @@ class _$_GetUsers implements _GetUsers {
     required TResult Function() getUsers,
     required TResult Function(ImageSource imageSource) choosePhoto,
     required TResult Function() createUserModel,
+    required TResult Function() updateFcmToken,
   }) {
     return getUsers();
   }
@@ -385,6 +404,7 @@ class _$_GetUsers implements _GetUsers {
     TResult? Function()? getUsers,
     TResult? Function(ImageSource imageSource)? choosePhoto,
     TResult? Function()? createUserModel,
+    TResult? Function()? updateFcmToken,
   }) {
     return getUsers?.call();
   }
@@ -397,6 +417,7 @@ class _$_GetUsers implements _GetUsers {
     TResult Function()? getUsers,
     TResult Function(ImageSource imageSource)? choosePhoto,
     TResult Function()? createUserModel,
+    TResult Function()? updateFcmToken,
     required TResult orElse(),
   }) {
     if (getUsers != null) {
@@ -413,6 +434,7 @@ class _$_GetUsers implements _GetUsers {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_ChoosePhoto value) choosePhoto,
     required TResult Function(_CreateUserModel value) createUserModel,
+    required TResult Function(_UpdateFcmToken value) updateFcmToken,
   }) {
     return getUsers(this);
   }
@@ -425,6 +447,7 @@ class _$_GetUsers implements _GetUsers {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_ChoosePhoto value)? choosePhoto,
     TResult? Function(_CreateUserModel value)? createUserModel,
+    TResult? Function(_UpdateFcmToken value)? updateFcmToken,
   }) {
     return getUsers?.call(this);
   }
@@ -437,6 +460,7 @@ class _$_GetUsers implements _GetUsers {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_ChoosePhoto value)? choosePhoto,
     TResult Function(_CreateUserModel value)? createUserModel,
+    TResult Function(_UpdateFcmToken value)? updateFcmToken,
     required TResult orElse(),
   }) {
     if (getUsers != null) {
@@ -520,6 +544,7 @@ class _$_ChoosePhoto implements _ChoosePhoto {
     required TResult Function() getUsers,
     required TResult Function(ImageSource imageSource) choosePhoto,
     required TResult Function() createUserModel,
+    required TResult Function() updateFcmToken,
   }) {
     return choosePhoto(imageSource);
   }
@@ -532,6 +557,7 @@ class _$_ChoosePhoto implements _ChoosePhoto {
     TResult? Function()? getUsers,
     TResult? Function(ImageSource imageSource)? choosePhoto,
     TResult? Function()? createUserModel,
+    TResult? Function()? updateFcmToken,
   }) {
     return choosePhoto?.call(imageSource);
   }
@@ -544,6 +570,7 @@ class _$_ChoosePhoto implements _ChoosePhoto {
     TResult Function()? getUsers,
     TResult Function(ImageSource imageSource)? choosePhoto,
     TResult Function()? createUserModel,
+    TResult Function()? updateFcmToken,
     required TResult orElse(),
   }) {
     if (choosePhoto != null) {
@@ -560,6 +587,7 @@ class _$_ChoosePhoto implements _ChoosePhoto {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_ChoosePhoto value) choosePhoto,
     required TResult Function(_CreateUserModel value) createUserModel,
+    required TResult Function(_UpdateFcmToken value) updateFcmToken,
   }) {
     return choosePhoto(this);
   }
@@ -572,6 +600,7 @@ class _$_ChoosePhoto implements _ChoosePhoto {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_ChoosePhoto value)? choosePhoto,
     TResult? Function(_CreateUserModel value)? createUserModel,
+    TResult? Function(_UpdateFcmToken value)? updateFcmToken,
   }) {
     return choosePhoto?.call(this);
   }
@@ -584,6 +613,7 @@ class _$_ChoosePhoto implements _ChoosePhoto {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_ChoosePhoto value)? choosePhoto,
     TResult Function(_CreateUserModel value)? createUserModel,
+    TResult Function(_UpdateFcmToken value)? updateFcmToken,
     required TResult orElse(),
   }) {
     if (choosePhoto != null) {
@@ -645,6 +675,7 @@ class _$_CreateUserModel implements _CreateUserModel {
     required TResult Function() getUsers,
     required TResult Function(ImageSource imageSource) choosePhoto,
     required TResult Function() createUserModel,
+    required TResult Function() updateFcmToken,
   }) {
     return createUserModel();
   }
@@ -657,6 +688,7 @@ class _$_CreateUserModel implements _CreateUserModel {
     TResult? Function()? getUsers,
     TResult? Function(ImageSource imageSource)? choosePhoto,
     TResult? Function()? createUserModel,
+    TResult? Function()? updateFcmToken,
   }) {
     return createUserModel?.call();
   }
@@ -669,6 +701,7 @@ class _$_CreateUserModel implements _CreateUserModel {
     TResult Function()? getUsers,
     TResult Function(ImageSource imageSource)? choosePhoto,
     TResult Function()? createUserModel,
+    TResult Function()? updateFcmToken,
     required TResult orElse(),
   }) {
     if (createUserModel != null) {
@@ -685,6 +718,7 @@ class _$_CreateUserModel implements _CreateUserModel {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_ChoosePhoto value) choosePhoto,
     required TResult Function(_CreateUserModel value) createUserModel,
+    required TResult Function(_UpdateFcmToken value) updateFcmToken,
   }) {
     return createUserModel(this);
   }
@@ -697,6 +731,7 @@ class _$_CreateUserModel implements _CreateUserModel {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_ChoosePhoto value)? choosePhoto,
     TResult? Function(_CreateUserModel value)? createUserModel,
+    TResult? Function(_UpdateFcmToken value)? updateFcmToken,
   }) {
     return createUserModel?.call(this);
   }
@@ -709,6 +744,7 @@ class _$_CreateUserModel implements _CreateUserModel {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_ChoosePhoto value)? choosePhoto,
     TResult Function(_CreateUserModel value)? createUserModel,
+    TResult Function(_UpdateFcmToken value)? updateFcmToken,
     required TResult orElse(),
   }) {
     if (createUserModel != null) {
@@ -720,6 +756,132 @@ class _$_CreateUserModel implements _CreateUserModel {
 
 abstract class _CreateUserModel implements HomeEvent {
   const factory _CreateUserModel() = _$_CreateUserModel;
+}
+
+/// @nodoc
+abstract class _$$_UpdateFcmTokenCopyWith<$Res> {
+  factory _$$_UpdateFcmTokenCopyWith(
+          _$_UpdateFcmToken value, $Res Function(_$_UpdateFcmToken) then) =
+      __$$_UpdateFcmTokenCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UpdateFcmTokenCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_UpdateFcmToken>
+    implements _$$_UpdateFcmTokenCopyWith<$Res> {
+  __$$_UpdateFcmTokenCopyWithImpl(
+      _$_UpdateFcmToken _value, $Res Function(_$_UpdateFcmToken) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_UpdateFcmToken implements _UpdateFcmToken {
+  const _$_UpdateFcmToken();
+
+  @override
+  String toString() {
+    return 'HomeEvent.updateFcmToken()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_UpdateFcmToken);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getUserModel,
+    required TResult Function() getUsers,
+    required TResult Function(ImageSource imageSource) choosePhoto,
+    required TResult Function() createUserModel,
+    required TResult Function() updateFcmToken,
+  }) {
+    return updateFcmToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getUserModel,
+    TResult? Function()? getUsers,
+    TResult? Function(ImageSource imageSource)? choosePhoto,
+    TResult? Function()? createUserModel,
+    TResult? Function()? updateFcmToken,
+  }) {
+    return updateFcmToken?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getUserModel,
+    TResult Function()? getUsers,
+    TResult Function(ImageSource imageSource)? choosePhoto,
+    TResult Function()? createUserModel,
+    TResult Function()? updateFcmToken,
+    required TResult orElse(),
+  }) {
+    if (updateFcmToken != null) {
+      return updateFcmToken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetUserModel value) getUserModel,
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_ChoosePhoto value) choosePhoto,
+    required TResult Function(_CreateUserModel value) createUserModel,
+    required TResult Function(_UpdateFcmToken value) updateFcmToken,
+  }) {
+    return updateFcmToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetUserModel value)? getUserModel,
+    TResult? Function(_GetUsers value)? getUsers,
+    TResult? Function(_ChoosePhoto value)? choosePhoto,
+    TResult? Function(_CreateUserModel value)? createUserModel,
+    TResult? Function(_UpdateFcmToken value)? updateFcmToken,
+  }) {
+    return updateFcmToken?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetUserModel value)? getUserModel,
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_ChoosePhoto value)? choosePhoto,
+    TResult Function(_CreateUserModel value)? createUserModel,
+    TResult Function(_UpdateFcmToken value)? updateFcmToken,
+    required TResult orElse(),
+  }) {
+    if (updateFcmToken != null) {
+      return updateFcmToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateFcmToken implements HomeEvent {
+  const factory _UpdateFcmToken() = _$_UpdateFcmToken;
 }
 
 /// @nodoc

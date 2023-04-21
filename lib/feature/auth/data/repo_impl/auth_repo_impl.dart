@@ -15,6 +15,7 @@ import 'package:simple_chat_app/feature/auth/domain/repo/auth_repo.dart';
 import 'package:simple_chat_app/feature/auth/presentation/bloc/auth_bloc.dart';
 import 'package:simple_chat_app/feature/auth/presentation/widgets/dialog_for_otp.dart';
 import 'package:simple_chat_app/feature/home/domain/repo/home_repo.dart';
+import 'package:simple_chat_app/feature/messages/domain/repo/messages_repo.dart';
 
 class AuthRepoImpl implements AuthRepo {
   @override
@@ -154,6 +155,7 @@ class AuthRepoImpl implements AuthRepo {
       await sl<UploadImageUtil>().removeImage();
       await sl<HomeRepo>().deleteUserModel();
       await FirebaseAuth.instance.signOut();
+      await sl<MessagesRepo>().deleteMessageDB();
     } else {
       await FirebaseAuth.instance.signOut();
     }

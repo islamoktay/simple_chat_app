@@ -11,14 +11,15 @@ import 'package:simple_chat_app/core/theme/app_colors.dart';
 import 'package:simple_chat_app/core/theme/custom_text_styles.dart';
 import 'package:simple_chat_app/core/utils/snack_bar/show_snack_bar.dart';
 import 'package:simple_chat_app/feature/auth/domain/repo/auth_repo.dart';
-import 'package:simple_chat_app/feature/home/presentation/bloc/home_bloc.dart';
+import 'package:simple_chat_app/feature/home/domain/repo/home_repo.dart';
+import 'package:simple_chat_app/feature/messages/domain/repo/messages_repo.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc(this.authRepo) : super(const _Initial()) {
+  AuthBloc(this.authRepo, this.messagesRepo) : super(const _Initial()) {
     on<_EmitUser>(_onEmitUser);
     on<_RegisterEmail>(_onRegisterEmail);
     on<_SignInEmail>(_onSignInEmail);
@@ -32,6 +33,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   final AuthRepo authRepo;
+  final MessagesRepo messagesRepo;
 
   final TextEditingController signInMailController = TextEditingController();
   final TextEditingController signInPasswordController =
@@ -232,7 +234,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             uid: user.uid,
           ),
         );
-        await navigateAccordingToUserModel();
+        await navigateAccordingToUserModel(
+          isAuthStateChanges: true,
+        );
       }
     });
   }
@@ -249,9 +253,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
-  Future<void> navigateAccordingToUserModel() async {
-    sl<HomeBloc>().add(const HomeEvent.getUserModel());
-    final userModel = sl<HomeBloc>().state.userModel;
+  Future<void> navigateAccordingToUserModel({
+    bool isAuthStateChanges = false,
+  }) async {
+    if (!isAuthStateChanges) {
+      await messagesRepo.createMessageDB();
+    }
+    final userModel = await sl<HomeRepo>().getUserModel();
     if (userModel != null) {
       await sl<AppRouter>().replaceAll([const HomeRoute()]);
     } else {

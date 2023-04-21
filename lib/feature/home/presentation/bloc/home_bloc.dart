@@ -27,6 +27,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetUserModel>(_onGetUserModel);
     on<_ChoosePhoto>(_onChoosePhoto);
     on<_CreateUserModel>(_onCreateUserModel);
+    on<_UpdateFcmToken>(_onUpdateFcmToken);
   }
 
   final HomeRepo homeRepo;
@@ -96,6 +97,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       );
       await homeRepo.createUserModel(user);
       await sl<AppRouter>().replaceAll([const HomeRoute()]);
+      emit(state.copyWith(chosenPhoto: null));
+      nameController.clear();
+    } catch (e) {
+      customSnackBar(content: AppContentTexts.wentWrong);
+    }
+  }
+
+  FutureOr<void> _onUpdateFcmToken(
+    _UpdateFcmToken event,
+    Emitter<HomeState> emit,
+  ) async {
+    try {
+      await homeRepo.updateFcmToken();
     } catch (e) {
       customSnackBar(content: AppContentTexts.wentWrong);
     }
