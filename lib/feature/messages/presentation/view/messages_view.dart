@@ -88,16 +88,17 @@ class MessagesView extends StatelessWidget {
                               ],
                             ),
                             const Spacer(),
-                            CircleAvatar(
-                              radius: 10.h,
-                              backgroundColor: Colors.red,
-                              child: Text(
-                                count.toString(),
-                                style: CustomTextStyles.smallText.copyWith(
-                                  color: AppColors.whiteColor,
+                            if (count > 0)
+                              CircleAvatar(
+                                radius: 10.h,
+                                backgroundColor: Colors.red,
+                                child: Text(
+                                  count.toString(),
+                                  style: CustomTextStyles.smallText.copyWith(
+                                    color: AppColors.whiteColor,
+                                  ),
                                 ),
                               ),
-                            ),
                           ],
                         ),
                       );

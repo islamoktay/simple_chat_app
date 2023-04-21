@@ -20,18 +20,21 @@ mixin _$MessagesEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(UserModel user) sendMessage,
+    required TResult Function(String uid) markAsReadMessages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(UserModel user)? sendMessage,
+    TResult? Function(String uid)? markAsReadMessages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(UserModel user)? sendMessage,
+    TResult Function(String uid)? markAsReadMessages,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$MessagesEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_MarkAsReadMessages value) markAsReadMessages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_MarkAsReadMessages value)? markAsReadMessages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_MarkAsReadMessages value)? markAsReadMessages,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(UserModel user) sendMessage,
+    required TResult Function(String uid) markAsReadMessages,
   }) {
     return started();
   }
@@ -122,6 +129,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(UserModel user)? sendMessage,
+    TResult? Function(String uid)? markAsReadMessages,
   }) {
     return started?.call();
   }
@@ -131,6 +139,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(UserModel user)? sendMessage,
+    TResult Function(String uid)? markAsReadMessages,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,6 +153,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_MarkAsReadMessages value) markAsReadMessages,
   }) {
     return started(this);
   }
@@ -153,6 +163,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_MarkAsReadMessages value)? markAsReadMessages,
   }) {
     return started?.call(this);
   }
@@ -162,6 +173,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_MarkAsReadMessages value)? markAsReadMessages,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -251,6 +263,7 @@ class _$_SendMessage implements _SendMessage {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(UserModel user) sendMessage,
+    required TResult Function(String uid) markAsReadMessages,
   }) {
     return sendMessage(user);
   }
@@ -260,6 +273,7 @@ class _$_SendMessage implements _SendMessage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(UserModel user)? sendMessage,
+    TResult? Function(String uid)? markAsReadMessages,
   }) {
     return sendMessage?.call(user);
   }
@@ -269,6 +283,7 @@ class _$_SendMessage implements _SendMessage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(UserModel user)? sendMessage,
+    TResult Function(String uid)? markAsReadMessages,
     required TResult orElse(),
   }) {
     if (sendMessage != null) {
@@ -282,6 +297,7 @@ class _$_SendMessage implements _SendMessage {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_MarkAsReadMessages value) markAsReadMessages,
   }) {
     return sendMessage(this);
   }
@@ -291,6 +307,7 @@ class _$_SendMessage implements _SendMessage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_MarkAsReadMessages value)? markAsReadMessages,
   }) {
     return sendMessage?.call(this);
   }
@@ -300,6 +317,7 @@ class _$_SendMessage implements _SendMessage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_MarkAsReadMessages value)? markAsReadMessages,
     required TResult orElse(),
   }) {
     if (sendMessage != null) {
@@ -315,6 +333,147 @@ abstract class _SendMessage implements MessagesEvent {
   UserModel get user;
   @JsonKey(ignore: true)
   _$$_SendMessageCopyWith<_$_SendMessage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_MarkAsReadMessagesCopyWith<$Res> {
+  factory _$$_MarkAsReadMessagesCopyWith(_$_MarkAsReadMessages value,
+          $Res Function(_$_MarkAsReadMessages) then) =
+      __$$_MarkAsReadMessagesCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String uid});
+}
+
+/// @nodoc
+class __$$_MarkAsReadMessagesCopyWithImpl<$Res>
+    extends _$MessagesEventCopyWithImpl<$Res, _$_MarkAsReadMessages>
+    implements _$$_MarkAsReadMessagesCopyWith<$Res> {
+  __$$_MarkAsReadMessagesCopyWithImpl(
+      _$_MarkAsReadMessages _value, $Res Function(_$_MarkAsReadMessages) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uid = null,
+  }) {
+    return _then(_$_MarkAsReadMessages(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_MarkAsReadMessages implements _MarkAsReadMessages {
+  const _$_MarkAsReadMessages({required this.uid});
+
+  @override
+  final String uid;
+
+  @override
+  String toString() {
+    return 'MessagesEvent.markAsReadMessages(uid: $uid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MarkAsReadMessages &&
+            (identical(other.uid, uid) || other.uid == uid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MarkAsReadMessagesCopyWith<_$_MarkAsReadMessages> get copyWith =>
+      __$$_MarkAsReadMessagesCopyWithImpl<_$_MarkAsReadMessages>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(UserModel user) sendMessage,
+    required TResult Function(String uid) markAsReadMessages,
+  }) {
+    return markAsReadMessages(uid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(UserModel user)? sendMessage,
+    TResult? Function(String uid)? markAsReadMessages,
+  }) {
+    return markAsReadMessages?.call(uid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(UserModel user)? sendMessage,
+    TResult Function(String uid)? markAsReadMessages,
+    required TResult orElse(),
+  }) {
+    if (markAsReadMessages != null) {
+      return markAsReadMessages(uid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_MarkAsReadMessages value) markAsReadMessages,
+  }) {
+    return markAsReadMessages(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_MarkAsReadMessages value)? markAsReadMessages,
+  }) {
+    return markAsReadMessages?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_MarkAsReadMessages value)? markAsReadMessages,
+    required TResult orElse(),
+  }) {
+    if (markAsReadMessages != null) {
+      return markAsReadMessages(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MarkAsReadMessages implements MessagesEvent {
+  const factory _MarkAsReadMessages({required final String uid}) =
+      _$_MarkAsReadMessages;
+
+  String get uid;
+  @JsonKey(ignore: true)
+  _$$_MarkAsReadMessagesCopyWith<_$_MarkAsReadMessages> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

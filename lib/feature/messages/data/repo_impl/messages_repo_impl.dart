@@ -28,7 +28,7 @@ class MessagesRepoImpl implements MessagesRepo {
       receiverUid: user.uid ?? '',
       senderModel: sl<HomeBloc>().state.userModel ?? UserModel(),
       receiverModel: user,
-      content: contentModel,
+      content: contentModel.copyWith(isRead: true),
     );
     if (Platform.isAndroid) {
       await sendNotification(
@@ -90,8 +90,9 @@ class MessagesRepoImpl implements MessagesRepo {
     if (responseDoc.exists) {
       final data = responseDoc.data();
       for (final element in data?['messages'] as List? ?? []) {
-        final a = MessageModel.fromJson(element as Map<String, dynamic>);
-        messageList.add(a);
+        final messageModel =
+            MessageModel.fromJson(element as Map<String, dynamic>);
+        messageList.add(messageModel);
       }
     }
     final chosenMessage = messageList.firstWhere(
@@ -123,5 +124,29 @@ class MessagesRepoImpl implements MessagesRepo {
         },
       );
     }
+  }
+
+  @override
+  Future<void> markAsReadMessages({required String uid}) async {
+    final response = FirebaseFirestore.instance
+        .collection('messages')
+        .doc(sl<AuthBloc>().state.uid);
+    final responseDoc = await response.get();
+    final messageList = <MessageModel>[];
+    if (responseDoc.exists) {
+      final data = responseDoc.data();
+      for (final element in data?['messages'] as List? ?? []) {
+        final messageModel =
+            MessageModel.fromJson(element as Map<String, dynamic>);
+        messageList.add(messageModel);
+      }
+    }
+    final chosenMessage =
+        messageList.firstWhere((element) => element.fromWho?.uid == uid);
+    chosenMessage.contents?.forEach((e) => e.isRead = true);
+    await FirebaseFirestore.instance
+        .collection('messages')
+        .doc(sl<AuthBloc>().state.uid)
+        .update({'messages': messageList.map((e) => e.toJson())});
   }
 }

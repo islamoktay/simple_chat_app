@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:simple_chat_app/core/router/route_management.gr.dart';
+import 'package:simple_chat_app/core/utils/dates/date_util.dart';
 import 'package:simple_chat_app/core/utils/notifications/notifications_util.dart';
 import 'package:simple_chat_app/core/utils/pick_image/pick_image_util.dart';
 import 'package:simple_chat_app/core/utils/upload_image_util/upload_image_util.dart';
@@ -24,6 +25,7 @@ Future<void> init() async {
     ..registerLazySingleton<PickImageUtil>(PickImageUtil.new)
     ..registerLazySingleton<UploadImageUtil>(UploadImageUtil.new)
     ..registerLazySingleton<NotificationsUtil>(NotificationsUtil.new)
+    ..registerLazySingleton<DateUtil>(DateUtil.new)
 
     //* Repos
     ..registerLazySingleton<AuthRepo>(AuthRepoImpl.new)

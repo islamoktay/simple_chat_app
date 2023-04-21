@@ -8,4 +8,5 @@ abstract class MessagesRepo {
   });
   Future<void> createMessageDB();
   Future<void> deleteMessageDB();
+  Future<void> markAsReadMessages({required String uid});
 }

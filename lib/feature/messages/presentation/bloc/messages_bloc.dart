@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +18,7 @@ part 'messages_state.dart';
 class MessagesBloc extends Bloc<MessagesEvent, MessagesState> {
   MessagesBloc(this.messagesRepo) : super(const _Initial()) {
     on<_SendMessage>(_onSendMessage);
+    on<_MarkAsReadMessages>(_onMarkAsReadMessages);
   }
   final MessagesRepo messagesRepo;
 
@@ -41,9 +41,18 @@ class MessagesBloc extends Bloc<MessagesEvent, MessagesState> {
         );
       }
       messageController.clear();
-    } catch (e, stackTrace) {
-      log(e.toString());
-      log(stackTrace.toString());
+    } catch (e) {
+      customSnackBar(content: AppContentTexts.wentWrong);
+    }
+  }
+
+  FutureOr<void> _onMarkAsReadMessages(
+    _MarkAsReadMessages event,
+    Emitter<MessagesState> emit,
+  ) async {
+    try {
+      await messagesRepo.markAsReadMessages(uid: event.uid);
+    } catch (e) {
       customSnackBar(content: AppContentTexts.wentWrong);
     }
   }

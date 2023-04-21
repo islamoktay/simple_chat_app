@@ -5,4 +5,6 @@ class MessagesEvent with _$MessagesEvent {
   const factory MessagesEvent.started() = _Started;
   const factory MessagesEvent.sendMessage({required UserModel user}) =
       _SendMessage;
+  const factory MessagesEvent.markAsReadMessages({required String uid}) =
+      _MarkAsReadMessages;
 }
